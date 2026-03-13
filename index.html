@@ -565,7 +565,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   };
 
   // Gửi dữ liệu tới Google Apps Script Web App
-  fetch("YOUR_SCRIPT_URL", {
+  fetch("https://script.google.com/macros/s/AKfycby3FXHVCd9RtJz_E-uVNGo0_FuX9MIRC3ew7aTWFN78Lu_XoiI-_m2d26tvQpz5ybg/exec", {
     method: "POST",
     body: JSON.stringify(formData),
     headers: { "Content-Type": "application/json" }
