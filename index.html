@@ -101,11 +101,34 @@
                 </div>
 
                 <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-ocean-900 hover:text-ocean-700 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
+                <!-- Mobile menu button -->
+<div class="md:hidden flex items-center">
+  <button id="menu-toggle" 
+          class="text-ocean-900 hover:text-ocean-700 focus:outline-none">
+    <i class="fas fa-bars text-2xl"></i>
+  </button>
+</div>
+
+<!-- Mobile menu (ẩn mặc định) -->
+<div id="mobile-menu" class="hidden absolute right-0 top-14 bg-white shadow-lg rounded w-48">
+  <ul class="flex flex-col">
+    <a href="#tong-quan" class="text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">Tổng Quan</a>
+                    <a href="#vi-tri" class="text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">Vị Trí</a>
+                    <a href="#tien-ich" class="text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">Tiện Ích</a>
+                    <a href="#san-pham" class="text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">Sản Phẩm</a>
+                    <a href="#lien-he" class="px-6 py-2.5 bg-ocean-900 text-white hover:bg-ocean-800 transition-all duration-300 uppercase text-xs tracking-widest font-semibold rounded-small shadow-lg shadow-ocean-900/20">
+                        Đăng Ký Tư Vấn
+                    </a>
+  </ul>
+</div>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden'); // bật/tắt menu
+  });
+</script>
+
             </div>
         </div>
     </nav>
