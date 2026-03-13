@@ -100,7 +100,7 @@
                     </a>
                 </div>
 
-                <!-- Mobile menu button -->
+                
                 <!-- Mobile menu button -->
 <div class="md:hidden flex items-center">
   <button id="menu-toggle" 
@@ -110,17 +110,42 @@
 </div>
 
 <!-- Mobile menu (ẩn mặc định) -->
-<div id="mobile-menu" class="hidden absolute right-0 top-14 bg-white shadow-lg rounded w-48">
-  <ul class="flex flex-col">
-    <a href="#tong-quan" class="text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">Tổng Quan</a>
-                    <a href="#vi-tri" class="text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">Vị Trí</a>
-                    <a href="#tien-ich" class="text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">Tiện Ích</a>
-                    <a href="#san-pham" class="text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">Sản Phẩm</a>
-                    <a href="#lien-he" class="px-6 py-2.5 bg-ocean-900 text-white hover:bg-ocean-800 transition-all duration-300 uppercase text-xs tracking-widest font-semibold rounded-small shadow-lg shadow-ocean-900/20">
-                        Đăng Ký Tư Vấn
-                    </a>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden absolute right-0 top-14 bg-white shadow-lg rounded w-56">
+  <ul class="flex flex-col divide-y divide-neutral-200">
+    <li>
+      <a href="#tong-quan" 
+         class="block px-4 py-3 text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">
+        Tổng Quan
+      </a>
+    </li>
+    <li>
+      <a href="#vi-tri" 
+         class="block px-4 py-3 text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">
+        Vị Trí
+      </a>
+    </li>
+    <li>
+      <a href="#tien-ich" 
+         class="block px-4 py-3 text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">
+        Tiện Ích
+      </a>
+    </li>
+    <li>
+      <a href="#san-pham" 
+         class="block px-4 py-3 text-neutral-600 hover:text-ocean-700 transition-colors text-xs uppercase tracking-widest font-semibold">
+        Sản Phẩm
+      </a>
+    </li>
+    <li>
+      <a href="#lien-he" 
+         class="block px-6 py-3 bg-ocean-900 text-white hover:bg-ocean-800 transition-all duration-300 uppercase text-xs tracking-widest font-semibold rounded-b-small shadow-lg shadow-ocean-900/20 text-center">
+        Đăng Ký Tư Vấn
+      </a>
+    </li>
   </ul>
 </div>
+
 
 <script>
   document.getElementById('menu-toggle').addEventListener('click', function() {
