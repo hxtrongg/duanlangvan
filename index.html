@@ -455,7 +455,7 @@
                             <p class="text-center text-[10px] text-neutral-400 mt-3">Thông tin của quý khách được bảo mật tuyệt đối.</p>
                         </div>
                     </form> -->
-                   <form id="contact-form" class="space-y-6">
+                  <form id="contact-form" class="space-y-6">
                       <div>
                         <label class="block text-xs font-bold uppercase text-neutral-500 mb-2">
                           Họ và Tên *
@@ -496,7 +496,8 @@
                         </button>
                         <p class="text-center text-[10px] text-neutral-400 mt-3">Thông tin của quý khách được bảo mật tuyệt đối.</p>
                       </div>
-                 </form>
+                    </form>
+
 
 
                 </div>
@@ -548,44 +549,44 @@
     </footer>
 <!-- Lấy dữ liệu gửi về form -->
    <script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
-  const originalText = btn.innerText;
-
-  btn.innerText = 'Đang Gửi...';
-  btn.disabled = true;
-  btn.classList.add('opacity-75');
-
-  // Lấy dữ liệu từ form
-  const formData = {
-    name: this.querySelector('input[name="name"]').value,
-    phone: this.querySelector('input[name="phone"]').value,
-    need: this.querySelector('select[name="need"]').value
-  };
-
-  // Gửi dữ liệu tới Google Apps Script Web App
-  fetch("https://script.google.com/macros/s/AKfycby3FXHVCd9RtJz_E-uVNGo0_FuX9MIRC3ew7aTWFN78Lu_XoiI-_m2d26tvQpz5ybg/exec", {
-    method: "POST",
-    body: JSON.stringify(formData),
-    headers: { "Content-Type": "application/json" }
-  })
-  .then(res => res.text())
-  .then(() => {
-    alert('Cảm ơn Quý khách! Chúng tôi đã nhận được thông tin đăng ký.');
-    this.reset();
-    btn.innerText = originalText;
-    btn.disabled = false;
-    btn.classList.remove('opacity-75');
-  })
-  .catch(err => {
-    alert('Có lỗi xảy ra, vui lòng thử lại.');
-    btn.innerText = originalText;
-    btn.disabled = false;
-    btn.classList.remove('opacity-75');
-  });
-});
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const btn = this.querySelector('button[type="submit"]');
+          const originalText = btn.innerText;
+        
+          btn.innerText = 'Đang Gửi...';
+          btn.disabled = true;
+          btn.classList.add('opacity-75');
+        
+          // Lấy dữ liệu từ form
+          const name = this.querySelector('input[name="name"]').value;
+          const phone = this.querySelector('input[name="phone"]').value;
+          const need = this.querySelector('select[name="need"]').value;
+        
+          // Tạo URL với query string
+          const url = "YOUR_WEB_APP_URL" +
+                      "?name=" + encodeURIComponent(name) +
+                      "&phone=" + encodeURIComponent(phone) +
+                      "&need=" + encodeURIComponent(need);
+        
+          fetch(url)
+            .then(res => res.text())
+            .then(() => {
+              alert('Cảm ơn Quý khách! Chúng tôi đã nhận được thông tin đăng ký.');
+              this.reset();
+              btn.innerText = originalText;
+              btn.disabled = false;
+              btn.classList.remove('opacity-75');
+            })
+            .catch(err => {
+              alert('Có lỗi xảy ra, vui lòng thử lại.');
+              btn.innerText = originalText;
+              btn.disabled = false;
+              btn.classList.remove('opacity-75');
+            });
+        });
 </script>
+
 
 
 
