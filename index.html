@@ -567,26 +567,43 @@
               };
 
               // Gửi dữ liệu tới Google Apps Script Web App
-              fetch("https://script.google.com/macros/s/AKfycby3Nx3eu5XvCNC7mZX6Gpg93b0hefZqzV8Sjw_rHDJyoxybieLyko1nu-CX0ziEXfh_/exec", {
-                method: "POST",
-                body: JSON.stringify(formData),
-                headers: { "Content-Type": "application/json" }
-              })
-              .then(res => res.text())
-              .then(() => {
-                alert('Cảm ơn Quý khách! Chúng tôi đã nhận được thông tin đăng ký. Chuyên viên tư vấn sẽ liên hệ lại trong thời gian sớm nhất.');
-                this.reset();
-                btn.innerText = originalText;
-                btn.disabled = false;
-                btn.classList.remove('opacity-75');
-              })
-              .catch(err => {
-                alert('Có lỗi xảy ra, vui lòng thử lại.');
-                btn.innerText = originalText;
-                btn.disabled = false;
-                btn.classList.remove('opacity-75');
-              });
-            });
+             document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  const originalText = btn.innerText;
+
+  btn.innerText = 'Đang Gửi...';
+  btn.disabled = true;
+  btn.classList.add('opacity-75');
+
+  // Lấy dữ liệu từ form
+  const name = this.querySelector('input[name="name"]').value;
+  const phone = this.querySelector('input[name="phone"]').value;
+  const need = this.querySelector('select[name="need"]').value;
+
+  // Tạo URL với query string
+  const url = "YOUR_SCRIPT_URL" + 
+              "?name=" + encodeURIComponent(name) + 
+              "&phone=" + encodeURIComponent(phone) + 
+              "&need=" + encodeURIComponent(need);
+
+  fetch(url)
+    .then(res => res.text())
+    .then(() => {
+      alert('Cảm ơn Quý khách! Chúng tôi đã nhận được thông tin đăng ký.');
+      this.reset();
+      btn.innerText = originalText;
+      btn.disabled = false;
+      btn.classList.remove('opacity-75');
+    })
+    .catch(err => {
+      alert('Có lỗi xảy ra, vui lòng thử lại.');
+      btn.innerText = originalText;
+      btn.disabled = false;
+      btn.classList.remove('opacity-75');
+    });
+});
+
 
 
     </script>
