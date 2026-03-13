@@ -148,9 +148,19 @@
 
 
 <script>
-  document.getElementById('menu-toggle').addEventListener('click', function() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden'); // bật/tắt menu
+  const toggleBtn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  // Toggle menu khi bấm nút
+  toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
+  // Đóng menu khi click vào bất kỳ link nào
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+    });
   });
 </script>
 
