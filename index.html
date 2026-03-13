@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="New Frame - Exported from UXMagic Copilot">
+    <meta name="description" content="Vinhomes Làng Vân - Thiên hạ đệ nhất hùng quan">
     <title>Vinhomes Làng vân | Vinhomes Hải Vân Bay</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -454,50 +454,49 @@
                             <p class="text-center text-[10px] text-neutral-400 mt-3">Thông tin của quý khách được bảo mật tuyệt đối.</p>
                         </div>
                     </form> -->
-                    <form action="https://script.google.com/macros/s/AKfycbzVjDfxBQECIrndMcxDUTMobzGJsTiCAe1hLghvJi-3VC9o5FrXNcVSciEJ2ymd40c/exec" method="GET">
-  <div>
-    <label class="block text-xs font-bold uppercase text-neutral-500 mb-2">
-      Họ và Tên *
-    </label>
-    <input type="text" name="name" required
-           class="w-full border-b border-neutral-300 py-2 
-                  focus:border-ocean-600 outline-none transition-colors 
-                  bg-ocean-800 text-white placeholder-neutral-300"
-           placeholder="Nguyễn Văn A">
-  </div>
+                   <form id="contact-form" class="space-y-6">
+                      <div>
+                        <label class="block text-xs font-bold uppercase text-neutral-500 mb-2">
+                          Họ và Tên *
+                        </label>
+                        <input type="text" name="name" required
+                               class="w-full border-b border-neutral-300 py-2 
+                                      focus:border-ocean-600 outline-none transition-colors 
+                                      bg-ocean-800 text-white placeholder-neutral-300"
+                               placeholder="Nguyễn Văn A">
+                      </div>
+                    
+                      <div>
+                        <label class="block text-xs font-bold uppercase text-neutral-500 mb-2">
+                          Số Điện Thoại *
+                        </label>
+                        <input type="tel" name="phone" required
+                               class="w-full border-b border-neutral-300 py-2 
+                                      focus:border-ocean-600 outline-none transition-colors 
+                                      bg-ocean-800 text-white placeholder-neutral-300"
+                               placeholder="0909...">
+                      </div>
+                    
+                      <div>
+                        <label class="block text-xs font-bold uppercase text-neutral-500 mb-2">Nhu Cầu</label>
+                        <select name="need" 
+                                class="w-full border-b border-neutral-300 py-2 focus:border-ocean-600 outline-none transition-colors text-neutral-800 bg-white">
+                          <option>Quan tâm Biệt thự Biển</option>
+                          <option>Quan tâm Biệt thự Đồi</option>
+                          <option>Quan tâm Biệt thự Liền Kề</option>
+                          <option>Nhận Bảng Giá &amp; CSBH</option>
+                        </select>
+                      </div>
+                    
+                      <div class="pt-4">
+                        <button type="submit" 
+                                class="w-full bg-ocean-900 text-white py-4 font-bold uppercase tracking-widest text-xs hover:bg-ocean-800 transition-all shadow-lg hover:shadow-ocean-900/30 rounded-small">
+                          GỬI YÊU CẦU
+                        </button>
+                        <p class="text-center text-[10px] text-neutral-400 mt-3">Thông tin của quý khách được bảo mật tuyệt đối.</p>
+                      </div>
+                 </form>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div>
-      <label class="block text-xs font-bold uppercase text-neutral-500 mb-2">
-        Số Điện Thoại *
-      </label>
-      <input type="tel" name="phone" required
-             class="w-full border-b border-neutral-300 py-2 
-                    focus:border-ocean-600 outline-none transition-colors 
-                    bg-ocean-800 text-white placeholder-neutral-300"
-             placeholder="0909...">
-    </div>
-  </div>
-
-  <div>
-    <label class="block text-xs font-bold uppercase text-neutral-500 mb-2">Nhu Cầu</label>
-    <select name="need" 
-            class="w-full border-b border-neutral-300 py-2 focus:border-ocean-600 outline-none transition-colors text-neutral-800 bg-white">
-      <option>Quan tâm Biệt thự Biển</option>
-      <option>Quan tâm Biệt thự Đồi</option>
-      <option>Quan tâm Biệt thự Liền Kề</option>
-      <option>Nhận Bảng Giá &amp; CSBH</option>
-    </select>
-  </div>
-
-  <div class="pt-4">
-    <button type="submit" 
-            class="w-full bg-ocean-900 text-white py-4 font-bold uppercase tracking-widest text-xs hover:bg-ocean-800 transition-all shadow-lg hover:shadow-ocean-900/30 rounded-small">
-      GỬI YÊU CẦU
-    </button>
-    <p class="text-center text-[10px] text-neutral-400 mt-3">Thông tin của quý khách được bảo mật tuyệt đối.</p>
-  </div>
-</form>
 
                 </div>
             </div>
@@ -546,28 +545,9 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Form Handling Script
-
-            document.getElementById('contact-form').addEventListener('submit', function(e) {
-              e.preventDefault();
-              const btn = this.querySelector('button[type="submit"]');
-              const originalText = btn.innerText;
-
-              btn.innerText = 'Đang Gửi...';
-              btn.disabled = true;
-              btn.classList.add('opacity-75');
-
-              // Lấy dữ liệu từ form
-              const formData = {
-                name: this.querySelector('input[name="name"]').value,
-                phone: this.querySelector('input[name="phone"]').value,
-                need: this.querySelector('select[name="need"]').value
-              };
-
-              // Gửi dữ liệu tới Google Apps Script Web App
-             document.getElementById('contact-form').addEventListener('submit', function(e) {
+<!-- Lấy dữ liệu gửi về form -->
+   <script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = this.querySelector('button[type="submit"]');
   const originalText = btn.innerText;
@@ -577,36 +557,35 @@
   btn.classList.add('opacity-75');
 
   // Lấy dữ liệu từ form
-  const name = this.querySelector('input[name="name"]').value;
-  const phone = this.querySelector('input[name="phone"]').value;
-  const need = this.querySelector('select[name="need"]').value;
+  const formData = {
+    name: this.querySelector('input[name="name"]').value,
+    phone: this.querySelector('input[name="phone"]').value,
+    need: this.querySelector('select[name="need"]').value
+  };
 
-  // Tạo URL với query string
-  const url = "YOUR_SCRIPT_URL" + 
-              "?name=" + encodeURIComponent(name) + 
-              "&phone=" + encodeURIComponent(phone) + 
-              "&need=" + encodeURIComponent(need);
-
-  fetch(url)
-    .then(res => res.text())
-    .then(() => {
-      alert('Cảm ơn Quý khách! Chúng tôi đã nhận được thông tin đăng ký.');
-      this.reset();
-      btn.innerText = originalText;
-      btn.disabled = false;
-      btn.classList.remove('opacity-75');
-    })
-    .catch(err => {
-      alert('Có lỗi xảy ra, vui lòng thử lại.');
-      btn.innerText = originalText;
-      btn.disabled = false;
-      btn.classList.remove('opacity-75');
-    });
+  // Gửi dữ liệu tới Google Apps Script Web App
+  fetch("YOUR_SCRIPT_URL", {
+    method: "POST",
+    body: JSON.stringify(formData),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(res => res.text())
+  .then(() => {
+    alert('Cảm ơn Quý khách! Chúng tôi đã nhận được thông tin đăng ký.');
+    this.reset();
+    btn.innerText = originalText;
+    btn.disabled = false;
+    btn.classList.remove('opacity-75');
+  })
+  .catch(err => {
+    alert('Có lỗi xảy ra, vui lòng thử lại.');
+    btn.innerText = originalText;
+    btn.disabled = false;
+    btn.classList.remove('opacity-75');
+  });
 });
+</script>
 
-
-
-    </script>
 
 
     <script src="script.js"></script>
